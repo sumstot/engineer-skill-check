@@ -1,0 +1,19 @@
+<div class="notification_form">
+  <% if notification.errors.present? %>
+    <ul>
+      <% notifcation.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+    </ul>
+  <% end %>
+
+   <%= form_with model: no, local: true do |f| %>
+    <div class="form_group">
+      <%= f.label :title %>
+      <%= f.text_field :title %>
+    </div>
+    <div class="form_group">
+      <%= f.label :body %>
+      <%= f.text_field :body %>
+    </div>
+</div>
