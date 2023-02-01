@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2023_02_01_013128) do
+ActiveRecord::Schema.define(version: 2023_02_01_022139) do
 
   create_table "departments", force: :cascade do |t|
     t.string "name", null: false
@@ -36,6 +36,11 @@ ActiveRecord::Schema.define(version: 2023_02_01_013128) do
     t.boolean "employee_notification_auth", default: false, null: false
     t.index ["department_id"], name: "index_employees_on_department_id"
     t.index ["office_id"], name: "index_employees_on_office_id"
+  end
+
+  create_table "notifications", force: :cascade do |t|
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
   end
 
   create_table "offices", force: :cascade do |t|

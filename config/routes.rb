@@ -9,4 +9,10 @@ Rails.application.routes.draw do
   resources :employees do
     resources :profiles
   end
+
+  resources :notifactions only %i[index show]
+
+  resources :employees do
+    resources :notifications only %i[new create update destroy]
+  end
 end
