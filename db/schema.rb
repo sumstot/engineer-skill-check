@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2023_02_01_022139) do
+ActiveRecord::Schema.define(version: 2023_02_01_080037) do
 
   create_table "departments", force: :cascade do |t|
     t.string "name", null: false
@@ -41,6 +41,8 @@ ActiveRecord::Schema.define(version: 2023_02_01_022139) do
   create_table "notifications", force: :cascade do |t|
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.string "title"
+    t.text "body"
   end
 
   create_table "offices", force: :cascade do |t|
