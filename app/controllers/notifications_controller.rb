@@ -1,6 +1,7 @@
 class NotificationsController < ApplicationController
 
   def index
+    @employee = current_user
     @notifications = Notification.all
   end
 
@@ -10,7 +11,19 @@ class NotificationsController < ApplicationController
   end
 
   def new
+    @employee = Employee.find(params[:employee_id])
     @notification = Notification.new
+  end
+
+  def create
+    @user = current_user
+    @notification = Notification.find(params[:id])
+    @notification.user = current_user
+    if @notification.save
+      redirect_to notifications_path
+    else
+      render :new, status: :unprocessable_entity
+    end
   end
 
   private
