@@ -11,14 +11,14 @@ class NotificationsController < ApplicationController
   end
 
   def new
-    @employee = Employee.find(params[:employee_id])
+    # @employee = Employee.find(params[:employee_id])
     @notification = Notification.new
   end
 
   def create
     @user = current_user
-    @notification = Notification.find(params[:id])
-    @notification.user = current_user
+    @notification = Notification.new(notification_params)
+    @notification.employee_id = @user.id
     if @notification.save
       redirect_to notifications_path
     else
