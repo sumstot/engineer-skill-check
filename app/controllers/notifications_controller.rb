@@ -16,14 +16,18 @@ class NotificationsController < ApplicationController
   end
 
   def create
-    @user = current_user
+    @employee = current_user
     @notification = Notification.new(notification_params)
-    @notification.employee_id = @user.id
+    @notification.employee = @employee
     if @notification.save
-      redirect_to notifications_path
+      redirect_to notification_path(@notification)
     else
       render :new, status: :unprocessable_entity
     end
+  end
+
+  def show
+    @notification = Notification.find_by(params[:id])
   end
 
   private
