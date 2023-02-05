@@ -22,9 +22,6 @@ class EmployeesController < ApplicationController
     end
   end
 
-  def edit
-  end
-
   def update
     add_params
 
