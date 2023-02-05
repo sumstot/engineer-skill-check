@@ -5,13 +5,12 @@ class NotificationsController < ApplicationController
     @notifications = Notification.all
   end
 
-  def show
-    @employee = Employee.find_by(paramas[:id])
-    @notification = Notification.find_by(params[:id])
-  end
+  # def show
+  #   @employee = Employee.find_by(paramas[:id])
+  #   @notification = Notification.find_by(params[:id])
+  # end
 
   def new
-    # @employee = Employee.find(params[:employee_id])
     @notification = Notification.new
   end
 

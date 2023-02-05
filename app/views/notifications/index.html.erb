@@ -9,7 +9,7 @@
     </thead>
     <tbody>
       <% @notifications.each do |notification| %>
-        <%= render "notification", notification: notification %>
+        <tr><%= render "notification", notification: notification %></tr>
       <% end %>
     </tbody>
   </table>
