@@ -9,12 +9,21 @@
 
    <%= form_with model: @notification, local: true do |f| %>
     <div class="form_group">
-      <%= f.label "タイトル" %>
-      <%= f.text_field :title %>
+      <div>
+        <%= f.label "タイトル" %>
+      </div>
+      <div>
+        <%= f.text_field :title %>
+      </div>
     </div>
-    <div class="form_group">
-      <%= f.label "内容" %>
-      <%= f.text_field :body %>
+    <div class="form_group noti_input">
+      <div>
+        <%= f.label "内容" %>
+      </div>
+      <div>
+        <%= f.text_field :body%>
+      </div>
+
     </div>
       <%= f.submit '投稿' %>
     <% end %>
