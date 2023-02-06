@@ -13,6 +13,10 @@
  *= require_tree .
  *= require_self
  */
+
+ // External Library (bootstrap)
+ @import "bootstrap/scss/bootstrap";
+ 
 body {
   margin: 0;
   padding: 0;
@@ -106,4 +110,3 @@ tr {
   background: none;
   border: 0;
 }
-

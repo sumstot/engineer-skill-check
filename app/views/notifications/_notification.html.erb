@@ -1,7 +1,13 @@
-<td class='p-3'>
-  <%= notification.title %>
-  <% if current_user.employee_notification_auth && notification.employee == current_user %>
-    <th class="btn_th"><%= link_to '編集', edit_notification_path(notification), class: 'btn' %></th>
-    <th class="btn_th"><%= link_to '削除', notification, method: :delete, data: { confirm: "お知らせ「#{notification.title} を削除します。よろしいですか？" }, class: 'btn' %></th>
-  <% end %>
-</td>
+<tr>
+  <td class='p-3'>
+    <%=link_to notification_path(notification) do%>
+      <%= notification.title %>
+    <% end %>
+    <% if current_user.employee_notification_auth && notification.employee == current_user %>
+      <th>
+        <th class="btn_th"><%= link_to '編集', edit_notification_path(notification), class: 'btn' %></th>
+        <th class="btn_th"><%= link_to '削除', notification, method: :delete, data: { confirm: "お知らせ「#{notification.title} を削除します。よろしいですか？" }, class: 'btn' %></th>
+      </th>
+    <% end %>
+  </td>
+</tr>

@@ -8,6 +8,7 @@
       <th>タイトル</th>
     </thead>
     <tbody>
+
       <% @notifications.each do |notification| %>
         <tr><%= render "notification", notification: notification %></tr>
       <% end %>

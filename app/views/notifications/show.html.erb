@@ -1,1 +1,17 @@
-div.
+<div>
+    <p class="employee_index"><%= link_to '一覧に戻る', notifications_path, class: 'btn mt-3' %></p>
+  <div class="container mt-5 notification_index">
+    <table class="notification_table">
+      <thead>
+        <tr class='d-flex justify-content-center'>
+          <th><%= @notification.title %></th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr class="notification_body d-flex align-items-start justify-content-start ps-2 pt-2">
+          <td><%= @notification.body%></td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>
