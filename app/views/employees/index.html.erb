@@ -6,6 +6,7 @@
   <% if current_user.employee_info_manage_auth %>
     <p class="new_employee"><%= link_to '新規追加', new_employee_path, class: 'btn' %></p>
   <% end %>
+    <p class="new_employee"><%= link_to "CSVダウンロード", employees_path(format: 'csv'), class: 'btn' %></p>
 
   <table class="employee_table">
     <thead>

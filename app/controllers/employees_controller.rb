@@ -4,6 +4,11 @@ class EmployeesController < ApplicationController
 
   def index
     @employees = Employee.active.order("#{sort_column} #{sort_direction}")
+
+    respond_to do |format|
+      format.html
+      format.csv { send_data @employees.to_csv, filename: "employees-#{Date.today}" }
+    end
   end
 
   def new
